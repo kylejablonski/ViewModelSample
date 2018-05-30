@@ -1,0 +1,35 @@
+<resources>
+    <!-- Global -->
+    <string name="app_name">View Model Sample</string>
+
+    <!-- Search Strings -->
+    <string name="pizza_in_san_francisco">pizza in San Francisco</string>
+    <string name="lets_go">Let\'s Go!</string>
+    <string name="provide_a_search_term">Provide a search term!</string>
+
+    <!-- Search Results Strings -->
+    <string name="fragment_places_list">Search Results</string>
+    <string name="search_results_title">Search Results</string>
+    <string name="search_results_subtitle">\"%s\"</string>
+
+    <!-- Error messages -->
+    <string name="no_search_results">No search results</string>
+    <string name="over_query_limit">Over query limit</string>
+    <string name="request_denied">Request denied</string>
+    <string name="invalid_request">Invalid search request</string>
+    <string name="unknown_error">Unknown error</string>
+
+    <!-- Details Strings -->
+    <string name="fragment_place_detail">Details</string>
+    <string name="search_details_title">Search Details</string>
+
+    <string name="call">Call</string>
+    <string name="website">Website</string>
+    <string name="directions">Directions</string>
+
+    <string name="photos_url">https://maps.googleapis.com/maps/api/place/photo?maxwidth=%d&amp;photoreference=%s&amp;key=%s</string>
+    <string name="photos_label">Photos</string>
+    <string name="reviews_label">Reviews</string>
+    <string name="search">Search</string>
+
+</resources>

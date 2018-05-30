@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarSearchDetails"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_back"
+                app:title="@string/search_details_title" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewDetailsPlaceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarDetails"
+            tools:text="@tools:sample/cities" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewDetailsPriceLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsPlaceTitle"
+            tools:text="$$$" />
+
+        <android.support.v7.widget.AppCompatRatingBar
+            android:id="@+id/ratingBarDetails"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/textViewDetailsPriceLevel"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsPlaceTitle"
+            tools:rating="2"
+            tools:text="@tools:sample/cities" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewDetailsReviewCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/ratingBarDetails"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsPlaceTitle"
+            tools:text="(4)" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewDetailsAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsPriceLevel"
+            tools:text="@tools:sample/cities" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/imageButtonCall"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:drawableTop="@drawable/ic_call_black"
+            android:text="@string/call"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/imageButtonWebsite"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsAddress" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/imageButtonWebsite"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:drawableTop="@drawable/ic_website"
+            android:text="@string/website"
+            app:layout_constraintLeft_toRightOf="@+id/imageButtonCall"
+            app:layout_constraintRight_toLeftOf="@+id/imageButtonDirections"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsAddress" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/imageButtonDirections"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:drawableTop="@drawable/ic_directions"
+            android:text="@string/directions"
+            app:layout_constraintLeft_toRightOf="@+id/imageButtonWebsite"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailsAddress" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewPhotosLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/photos_label"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonCall" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewPhotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPhotosLabel"
+            tools:listitem="@layout/row_photo" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewReviewsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/reviews_label"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewPhotos" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewRatings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewReviewsLabel"
+            tools:listitem="@layout/row_review" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
