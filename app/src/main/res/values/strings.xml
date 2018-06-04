@@ -32,4 +32,7 @@
     <string name="reviews_label">Reviews</string>
     <string name="search">Search</string>
 
+    <string name="options_save">Save</string>
+    <string name="options_share">Share</string>
+    <string name="options_cancel">Cancel</string>
 </resources>

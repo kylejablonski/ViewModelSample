@@ -1,13 +1,9 @@
 package com.kdotj.viewmodelsample.place_list
 
 import android.content.Context
-import android.support.v7.widget.AppCompatImageView
-import android.support.v7.widget.AppCompatRatingBar
-import android.support.v7.widget.AppCompatTextView
-import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.widget.*
+import android.view.*
+import android.widget.Toast
 import com.kdotj.viewmodelsample.R
 import com.kdotj.viewmodelsample.data.places.Place
 import com.kdotj.viewmodelsample.priceArray
@@ -39,6 +35,32 @@ class PlaceAdapter(private val context: Context,
         holder.itemView.setOnClickListener {
             listener.onClick(place)
         }
+
+        holder.placeOptionsButton.setOnClickListener {
+            val popupMenu = PopupMenu(context, holder.placeOptionsButton, Gravity.START)
+            popupMenu.menuInflater.inflate(R.menu.menu_place_options, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { item: MenuItem ->
+                when (item.itemId) {
+                    R.id.action_save -> {
+                        Toast.makeText(context, context.getString(R.string.options_save), Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.action_share -> {
+                        Toast.makeText(context, context.getString(R.string.options_share), Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.action_cancel -> {
+                        Toast.makeText(context, context.getString(R.string.options_cancel), Toast.LENGTH_SHORT).show()
+                        popupMenu.dismiss()
+                        true
+                    }
+                    else -> {
+                        false
+                    }
+                }
+            }
+            popupMenu.show()
+        }
     }
 
     fun setListener(listener: Listener) {
@@ -50,5 +72,6 @@ class PlaceAdapter(private val context: Context,
         val placeIcon = view.findViewById(R.id.imageViewPlaceIcon) as AppCompatImageView
         val placeRating = view.findViewById(R.id.ratingBarPlace) as AppCompatRatingBar
         val placePriceLevel = view.findViewById(R.id.textViewPriceLevel) as AppCompatTextView
+        val placeOptionsButton = view.findViewById(R.id.btnMoreOptions) as AppCompatImageButton
     }
 }
