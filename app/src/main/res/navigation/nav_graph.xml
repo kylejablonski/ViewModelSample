@@ -22,12 +22,8 @@
         <action
             android:id="@+id/action_placeListFragment_to_placeDetailFragment"
             app:destination="@id/placeDetailFragment" />
-        <argument
-            android:name="query"
-            app:type="String" />
-        <argument
-            android:name="type"
-            app:type="String" />
+        <argument android:name="query" />
+        <argument android:name="category" />
     </fragment>
 
     <fragment

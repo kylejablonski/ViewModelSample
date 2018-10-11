@@ -18,14 +18,14 @@ class MainViewModel : ViewModel() {
     private var placeDetails = MutableLiveData<PlaceDetailsResponse>()
 
     private var searchTerms: String? = null
-    private var type: String? = null
+    private var category: String? = null
     private var placeId: String? = null
 
     fun injectWebService(webservice: WebService) {
         this.webservice = webservice
     }
 
-    fun getPlacesList(searchTerms: String, type: String): MutableLiveData<PlacesResponse> {
+    fun getPlacesList(searchTerms: String, category: String): MutableLiveData<PlacesResponse> {
         /*
             Check for changes in the parameters
          */
@@ -35,14 +35,14 @@ class MainViewModel : ViewModel() {
             this.searchTerms = searchTerms
         }
 
-        if (this.type != type) {
+        if (this.category != category) {
             requestChanged = true
-            this.type = type
+            this.category = category
         }
 
         if (placeResponse.value == null || requestChanged) {
 
-            requestPlaces(searchTerms, type)
+            requestPlaces(searchTerms, category)
         }
         return placeResponse
     }

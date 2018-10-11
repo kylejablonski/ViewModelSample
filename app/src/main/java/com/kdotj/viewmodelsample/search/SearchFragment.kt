@@ -35,7 +35,7 @@ class SearchFragment : Fragment() {
 
                 val bundle = Bundle()
                 bundle.putString("query", query)
-                bundle.putString("type", "")
+                bundle.putString("category", "")
                 val navController = Navigation.findNavController(activity!!, R.id.nav_host_fragment)
                 navController.navigate(R.id.action_searchFragment_to_placeListFragment, bundle)
 

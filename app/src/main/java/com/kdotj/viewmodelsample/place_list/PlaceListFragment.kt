@@ -3,6 +3,7 @@ package com.kdotj.viewmodelsample.place_list
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -53,11 +54,13 @@ class PlaceListFragment : Fragment() {
         val searchTerm = arguments!!.getString("query")
         toolbarSearchResults.title = getString(R.string.search_results_title)
         toolbarSearchResults.subtitle = String.format(Locale.getDefault(), getString(R.string.search_results_subtitle), searchTerm)
-        val type = arguments!!.getString("type")
-        mainViewModel.getPlacesList(searchTerm, type).observe(activity!!, Observer<PlacesResponse> { t ->
+        val category = arguments!!.getString("category")
+        mainViewModel.getPlacesList(searchTerm, category).observe(activity!!, Observer<PlacesResponse> { t ->
             if (t!!.status == "ZERO_RESULTS") {
                 rlEmptyState.visibility = View.VISIBLE
-            } else {
+            } else if(t!!.status == "OVER_QUERY_LIMIT"){
+                Snackbar.make(toolbarSearchResults, getString(R.string.over_query_limit), Snackbar.LENGTH_INDEFINITE).show()
+            }else {
                 rlEmptyState.visibility = View.GONE
                 applyData(t.places)
             }
